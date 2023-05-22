@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My first dynamic Website</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+
+<body>
+    <main>
+        <!-- NAVBAR START -->
+        <section>
+            <nav>
+                <ul class="menuItems" style="list-style: none; display: flex;">
+                    <li style="padding: 5px;"><a href='#' data-item='Home'>Home</a></li>
+                    <li style="padding: 5px;"><a href='/titanic' data-item='Titanic'>Titanic</a></li>
+                    <li style="padding: 5px;"><a href='https://github.com/muhammedikbalsevinc' data-item='About'>About</a></li>
+                </ul>
+            </nav>
+
+        </section>
+        <!-- NAVBAR FINISH -->
+        <a href="https://www.hwr-berlin.de/">link text</a>
+        <h1>I have been seen {{ count }} times.</h1>
+        <ul>
+            {% for i in range(1, count+1) %}
+            <li>{{ i }}: Hello {{ name }}! </li>
+            {% endfor %}
+        </ul>
+        <img src="../static/images/mustang.jpg" alt="Dream Car">
+        <footer>
+            <p>Created by Muhammed Ikbal Sevinc</p>
+        </footer>
+    </main>
+</body>
+
+</html>
