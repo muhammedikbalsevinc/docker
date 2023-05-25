@@ -14,5 +14,5 @@ services:
     depends_on:
       - redis
     environment:
-      - REDIS_PASSWORD=S1r2yc3k.
-      - REDIS_HOST=srv-captain--redis
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST}
