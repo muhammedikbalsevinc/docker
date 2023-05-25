@@ -3,8 +3,8 @@ import redis
 from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
-import numpy as np
-import pandas as pd
+import pandas
+import matplotlib.pyplot as plt
 
 load_dotenv() 
 cache = redis.Redis(host=os.getenv('REDIS_HOST'), port=6379,  password=os.getenv('REDIS_PASSWORD'))
@@ -28,7 +28,12 @@ def hello():
 
 @app.route('/titanic')
 def titanic():
-    return render_template('titanic.html')
+    
+    file_path = 'static/titanicData/TitanicTrain.csv'
+    df = pandas.read_csv(file_path)
+    df_preview = df.head(5)
+
+    return render_template('titanic.html', table=df_preview.to_html(classes='data', index=False))
 
 
 if __name__ == "__main__":

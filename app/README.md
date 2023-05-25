@@ -1,0 +1,1 @@
+This project involves building a web application using Flask and integrating various features such as adding links, a footer, an image, a navigation menu, and creating additional pages. 
